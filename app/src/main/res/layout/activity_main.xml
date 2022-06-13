@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.4"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guideline_start"
+        app:layout_constraintRight_toLeftOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="parent"
+        android:weightSum="8">
+
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/custom_btn"
+            android:text="@string/play_russ"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_play_game"
+            android:onClick="clickGameButtonMenu"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn_statistics"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="4dp"
+            app:icon="@drawable/ic_baseline_wine_bar_24"
+            android:text="@string/text_Statistics"
+            android:background="@drawable/custom_btn"
+            app:backgroundTint="@null"
+            android:onClick="clickStatisticsButtonMenu"
+            tools:ignore="UsingOnClickInXml" />
+        <Button
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="4dp"
+            app:icon="@drawable/ic_baseline_feedback_24"
+            android:text="@string/about"
+            android:background="@drawable/custom_btn"
+            app:backgroundTint="@null"
+            android:onClick="clickAboutButtonMenu"
+            tools:ignore="UsingOnClickInXml" />
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginBottom="4dp"
+            app:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:text="@string/exit"
+            android:background="@drawable/custom_btn"
+            app:backgroundTint="@null"
+            android:onClick="clickExitButtonMenu"
+            tools:ignore="UsingOnClickInXml" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

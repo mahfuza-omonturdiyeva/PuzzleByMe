@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/id_4x4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+
+    <LinearLayout
+        android:id="@+id/container_home_restart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+        app:layout_constraintRight_toRightOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="@id/guideline_top">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_btns"
+            android:layout_weight="1"
+            android:background="@drawable/click_ripple_not_backround"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="clickHomeButtonGame"
+            tools:ignore="UsingOnClickInXml">
+
+            <ImageView
+                android:layout_width="@dimen/btnHeightWeight"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_home3" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_btns"
+            android:layout_weight="2"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:text="@string/moves_ru"
+                    android:textColor="@color/textColor_800"
+                    android:textSize="@dimen/textSize20sp" />
+
+                <TextView
+                    android:id="@+id/counterMoves"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/textColor_800"
+                    android:textSize="@dimen/textSize20sp" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+        <Chronometer
+            android:id="@+id/ic_chronometer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_btns"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textColor="@color/textColor_800"
+            android:textSize="@dimen/textSize20sp"
+            tools:ignore="InvalidId" />
+
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_btns"
+            android:layout_weight="1"
+            android:background="@drawable/click_ripple_not_backround"
+            android:clickable="true"
+            android:focusable="true"
+            tools:ignore="UsingOnClickInXml">
+
+            <ImageView
+                android:layout_width="@dimen/btnHeightWeight"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:onClick="clickRestartButtonGame"
+                android:src="@drawable/ic_redo"
+                tools:ignore="UsingOnClickInXml" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/containerButtons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_game_buttons"
+        android:padding="10dp"
+        app:layout_constraintHeight_percent="0.56"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/guideline_start"
+        app:layout_constraintRight_toRightOf="@id/guideline_end"
+        app:layout_constraintTop_toBottomOf="@id/container_home_restart">
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="00"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn5"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="01"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn6"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn1"
+            app:layout_constraintRight_toLeftOf="@id/btn3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="02"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn7"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn2"
+            app:layout_constraintRight_toLeftOf="@id/btn4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="03"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn8"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="10"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn9"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn6"
+            app:layout_constraintTop_toBottomOf="@id/btn1"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="11"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn10"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn5"
+            app:layout_constraintRight_toLeftOf="@id/btn7"
+            app:layout_constraintTop_toBottomOf="@id/btn2"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="12"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn11"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn6"
+            app:layout_constraintRight_toLeftOf="@id/btn8"
+            app:layout_constraintTop_toBottomOf="@id/btn3"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="13"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn12"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn7"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn4"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="20"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn13"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn10"
+            app:layout_constraintTop_toBottomOf="@id/btn5"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="21"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn14"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn9"
+            app:layout_constraintRight_toLeftOf="@id/btn11"
+            app:layout_constraintTop_toBottomOf="@id/btn6"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn11"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="22"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn15"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn10"
+            app:layout_constraintRight_toLeftOf="@id/btn12"
+            app:layout_constraintTop_toBottomOf="@id/btn7"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn12"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="23"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toTopOf="@+id/btn16"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn11"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn8"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn13"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:layout_marginBottom="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="30"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn14"
+            app:layout_constraintTop_toBottomOf="@id/btn9"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn14"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:layout_marginBottom="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="31"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn13"
+            app:layout_constraintRight_toLeftOf="@id/btn15"
+            app:layout_constraintTop_toBottomOf="@id/btn10"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn15"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginEnd="@dimen/margin_1dp"
+            android:layout_marginBottom="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="32"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn14"
+            app:layout_constraintRight_toLeftOf="@id/btn16"
+            app:layout_constraintTop_toBottomOf="@id/btn11"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/btn16"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_1dp"
+            android:layout_marginBottom="@dimen/margin_1dp"
+            android:background="@drawable/custom_btn"
+            android:onClick="onClick"
+            android:tag="33"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.24"
+            app:layout_constraintLeft_toRightOf="@id/btn15"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn12"
+            app:layout_constraintWidth_percent="0.24"
+            tools:ignore="UsingOnClickInXml" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/song"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/click_ripple_not_backround"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="clickMusicButtonGame"
+        android:src="@drawable/ic_play_music_note_24"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintRight_toLeftOf="@id/space"
+        app:layout_constraintTop_toBottomOf="@id/containerButtons"
+        app:layout_constraintWidth_percent="0.08"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerButtons" />
+
+    <ImageView
+        android:id="@+id/click_song"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/click_ripple_not_backround"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="clickVoiceButtonGame"
+        android:src="@drawable/ic_baseline_volume_up_24"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintLeft_toRightOf="@id/space"
+        app:layout_constraintTop_toBottomOf="@id/containerButtons"
+        app:layout_constraintWidth_percent="0.08"
+        tools:ignore="UsingOnClickInXml" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song"
+        app:lottie_autoPlay="true" />
+
+    <TextView
+        android:id="@+id/text_congratulations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_are_winner"
+        android:textColor="@color/textColor_800"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        app:lottie_autoPlay="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>

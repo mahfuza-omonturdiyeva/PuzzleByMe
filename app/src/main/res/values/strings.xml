@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Пятнашки</string>
+    <string name="text_Statistics">cтатистика</string>
+    <string name="text_settings">настройки</string>
+    <string name="text_4x4">4X4</string>
+    <string name="moves_ru">шаг :</string>
+    <string name="play">play</string>
+    <string name="play_russ">начать</string>
+    <string name="about">Об игре</string>
+    <string name="exit">выход</string>
+    <string name="record">рекорды</string>
+    <string name="your_are_winner">Вы выиграли</string>
+    <string name="how_must_winner">вот как выглядит победа</string>
+    <string name="n_n_gita_3">Меня зовут Махфуза.\n Я создала это приложение,\n когда учился в Академии программирования GITA. Это приложение было дано нам как домашнее задание по тему 3 .</string>
+    <string name="by">Создател</string>
+</resources>

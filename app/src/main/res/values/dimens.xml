@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">30dp</dimen>
+    <dimen name="size_text">30sp</dimen>
+    <dimen name="btn_height">60dp</dimen>
+    <dimen name="margin_btns">1dp</dimen>
+    <dimen name="width_btns">60dp</dimen>
+    <dimen name="btnHeightWeight">30dp</dimen>
+    <dimen name="textSize20sp">15sp</dimen>
+    <dimen name="width_height_oval">30dp</dimen>
+    <dimen name="margin_1dp">2dp</dimen>
+</resources>
